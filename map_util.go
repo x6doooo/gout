@@ -6,13 +6,6 @@ import (
     "errors"
     "strings"
 )
-func snake2camel(str string) string {
-    arr := strings.Split(str, "_")
-    for i, v := range arr {
-        arr[i] = strings.Title(v)
-    }
-    return strings.Join(arr, "")
-}
 
 func SetField(obj interface{}, name string, value interface{}) error {
     structValue := reflect.ValueOf(obj).Elem()
@@ -21,7 +14,7 @@ func SetField(obj interface{}, name string, value interface{}) error {
         if s == name {
             return true
         }
-        if s == snake2camel(name) {
+        if s == SnakeToCamel(name) {
             return true
         }
         return false
