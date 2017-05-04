@@ -4,7 +4,6 @@ import (
     "reflect"
     "fmt"
     "errors"
-    "strings"
 )
 
 func SetField(obj interface{}, name string, value interface{}) error {
